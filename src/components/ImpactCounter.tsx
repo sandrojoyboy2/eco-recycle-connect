@@ -56,7 +56,7 @@ export const ImpactCounter = () => {
           />
           <Counter
             end={2500}
-            label="Clientes Atendidos"
+            label="Pessoas Atendidas"
             icon={<Heart className="h-6 w-6 text-primary" />}
           />
           <Counter

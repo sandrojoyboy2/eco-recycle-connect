@@ -10,18 +10,23 @@ export const Hero = () => {
             <Recycle className="h-16 w-16 text-primary animate-pulse" />
           </div>
           <h1 className="mb-6 text-4xl md:text-6xl font-bold text-gray-900">
-            Reciclagem Inteligente de{" "}
-            <span className="text-primary">Eletrônicos</span>
+            Recicle Hoje para um{" "}
+            <span className="text-primary">Amanhã Sustentável</span>
           </h1>
           <p className="mb-8 text-xl text-gray-600 max-w-2xl">
             Transforme seu lixo eletrônico em um impacto positivo para o planeta.
             Faça parte da revolução da reciclagem responsável.
           </p>
           <Button size="lg" className="group">
-            Comece a Reciclar
+            Agende sua Coleta Agora
             <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
           </Button>
         </div>
+      </div>
+      {/* Decorative background elements */}
+      <div className="absolute inset-0 -z-10 overflow-hidden">
+        <div className="absolute -top-1/2 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+        <div className="absolute -bottom-1/2 left-0 w-96 h-96 bg-secondary/5 rounded-full blur-3xl" />
       </div>
     </div>
   );
