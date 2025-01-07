@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Globe, Heart, Truck } from "lucide-react";
+import { Globe, Heart, Recycle } from "lucide-react";
 
 interface CounterProps {
   end: number;
