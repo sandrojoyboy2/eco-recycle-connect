@@ -10,7 +10,7 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart";
-import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer } from "recharts";
+import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Tooltip } from "recharts";
 
 export const StatisticsSection = () => {
   const data = [
@@ -46,9 +46,19 @@ export const StatisticsSection = () => {
                   <XAxis dataKey="name" />
                   <YAxis />
                   <Bar dataKey="value" fill="var(--color-bar)" />
-                  <ChartTooltip>
-                    <ChartTooltipContent />
-                  </ChartTooltip>
+                  <Tooltip content={({ active, payload, label }) => {
+                    if (active && payload && payload.length) {
+                      return (
+                        <div className="bg-white p-2 border rounded shadow">
+                          <p className="text-sm font-medium">{label}</p>
+                          <p className="text-sm text-gray-600">
+                            {`${payload[0].value}% reciclável`}
+                          </p>
+                        </div>
+                      );
+                    }
+                    return null;
+                  }} />
                 </BarChart>
               </ResponsiveContainer>
             </ChartContainer>
