@@ -1,31 +1,33 @@
-import { PickupForm } from "./PickupForm";
+import { ArrowRight, Recycle } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export const Hero = () => {
   return (
-    <section className="relative py-20 overflow-hidden">
-      <div className="container px-4 mx-auto">
-        <div className="flex flex-wrap items-center -mx-4">
-          <div className="w-full lg:w-1/2 px-4 mb-16 lg:mb-0">
-            <div className="max-w-lg">
-              <h1 className="text-4xl font-bold mb-5">
-                Recicle Hoje para um Amanhã Sustentável
-              </h1>
-              <p className="text-lg text-gray-500 mb-8">
-                Faça parte da mudança. Descarte seus resíduos eletrônicos de forma
-                responsável e contribua para um futuro mais sustentável.
-              </p>
-              <PickupForm />
-            </div>
+    <div className="relative overflow-hidden bg-gradient-to-b from-green-50 to-white py-24">
+      <div className="container mx-auto px-4">
+        <div className="flex flex-col items-center text-center">
+          <div className="mb-8">
+            <Recycle className="h-16 w-16 text-primary animate-pulse" />
           </div>
-          <div className="w-full lg:w-1/2 px-4">
-            <img
-              className="w-full h-auto rounded-lg shadow-xl"
-              src="/lovable-uploads/ce3de26b-0d89-400e-8de5-16a8e9deb5d5.png"
-              alt="Reciclagem de eletrônicos"
-            />
-          </div>
+          <h1 className="mb-6 text-4xl md:text-6xl font-bold text-gray-900">
+            Recicle Hoje para um{" "}
+            <span className="text-primary">Amanhã Sustentável</span>
+          </h1>
+          <p className="mb-8 text-xl text-gray-600 max-w-2xl">
+            Transforme seu lixo eletrônico em um impacto positivo para o planeta.
+            Faça parte da revolução da reciclagem responsável.
+          </p>
+          <Button size="lg" className="group">
+            Agende sua Coleta Agora
+            <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+          </Button>
         </div>
       </div>
-    </section>
+      {/* Decorative background elements */}
+      <div className="absolute inset-0 -z-10 overflow-hidden">
+        <div className="absolute -top-1/2 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+        <div className="absolute -bottom-1/2 left-0 w-96 h-96 bg-secondary/5 rounded-full blur-3xl" />
+      </div>
+    </div>
   );
 };
