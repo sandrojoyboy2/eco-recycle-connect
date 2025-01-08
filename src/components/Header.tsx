@@ -10,11 +10,6 @@ export const Header = () => {
     { label: "Home", href: "/" },
     { label: "Serviços", href: "/servicos" },
     { label: "Sessão Educativa", href: "/educativo" },
-    { 
-      label: "Loja de Componentes", 
-      href: "#",
-      badge: "Brevemente" 
-    },
     { label: "Sobre Nós", href: "/sobre" },
   ];
 
@@ -22,9 +17,8 @@ export const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <a href="/" className="text-xl font-bold text-primary flex items-center gap-2">
-            <span className="text-2xl">🌱</span>
-            EcoRecycle
+          <a href="/" className="text-xl font-bold text-primary">
+            Eco Connect
           </a>
 
           <nav className="hidden md:flex items-center space-x-6">

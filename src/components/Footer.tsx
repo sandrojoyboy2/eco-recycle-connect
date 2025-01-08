@@ -3,13 +3,13 @@ import { Button } from "./ui/button";
 
 export const Footer = () => {
   return (
-    <footer className="bg-gray-50 border-t">
+    <footer className="bg-white border-t">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-4">
             <h3 className="text-lg font-semibold flex items-center gap-2">
               <Leaf className="h-5 w-5 text-primary" />
-              EcoRecycle
+              Eco Connect
             </h3>
             <p className="text-gray-600">
               Juntos, transformando pequenas ações em grandes mudanças para nosso planeta.
@@ -25,7 +25,7 @@ export const Footer = () => {
               </p>
               <p className="flex items-center gap-2">
                 <Mail className="h-4 w-4" />
-                contato@ecorecycle.com
+                contato@ecoconnect.com
               </p>
               <p className="flex items-center gap-2">
                 <MapPin className="h-4 w-4" />
@@ -43,19 +43,19 @@ export const Footer = () => {
             </div>
           </div>
 
-          <div className="space-y-4">
-            <h4 className="font-medium">Newsletter</h4>
+          <div className="space-y-4 bg-primary/5 p-6 rounded-lg">
+            <h4 className="font-medium text-lg">Newsletter</h4>
             <p className="text-gray-600">
               Receba dicas e novidades sobre reciclagem
             </p>
-            <div className="flex gap-2">
+            <div className="flex flex-col gap-2">
               <input
                 type="email"
                 placeholder="Seu e-mail"
-                className="flex-1 px-3 py-2 border rounded-md"
+                className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
               />
-              <Button size="sm">
-                Assinar
+              <Button className="w-full">
+                Assinar Newsletter
               </Button>
             </div>
           </div>
