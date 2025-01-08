@@ -3,10 +3,15 @@ import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
 import { useState } from "react";
 
+interface MenuItem {
+  label: string;
+  href: string;
+}
+
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const menuItems = [
+  const menuItems: MenuItem[] = [
     { label: "Home", href: "/" },
     { label: "Serviços", href: "/servicos" },
     { label: "Sessão Educativa", href: "/educativo" },
@@ -21,19 +26,14 @@ export const Header = () => {
             Eco Connect
           </a>
 
-          <nav className="hidden md:flex items-center space-x-6">
+          <nav className="hidden md:flex items-center absolute left-1/2 transform -translate-x-1/2">
             {menuItems.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
-                className="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"
+                className="text-gray-600 hover:text-primary transition-colors px-4"
               >
                 {item.label}
-                {item.badge && (
-                  <Badge variant="secondary" className="animate-pulse">
-                    {item.badge}
-                  </Badge>
-                )}
               </a>
             ))}
           </nav>
@@ -59,14 +59,9 @@ export const Header = () => {
                 <a
                   key={item.label}
                   href={item.href}
-                  className="text-gray-600 hover:text-primary transition-colors flex items-center justify-between"
+                  className="text-gray-600 hover:text-primary transition-colors"
                 >
                   {item.label}
-                  {item.badge && (
-                    <Badge variant="secondary" className="animate-pulse">
-                      {item.badge}
-                    </Badge>
-                  )}
                 </a>
               ))}
             </nav>
