@@ -38,6 +38,14 @@ export const Services = () => {
       description: "Doe seus dispositivos em bom estado para projetos sociais parceiros.",
       action: "Fazer Doação",
       href: "#doacoes"
+    },
+    {
+      icon: <ShoppingCart className="h-8 w-8 text-primary" />,
+      title: "Loja de Componentes",
+      description: "Adquira peças e componentes eletrônicos reciclados e certificados.",
+      action: "Visitar Loja",
+      href: "#loja",
+      badge: "Brevemente"
     }
   ];
 
