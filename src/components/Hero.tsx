@@ -30,7 +30,7 @@ export const Hero = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center text-center">
           <div className="mb-8">
-            <Recycle className="h-16 w-16 text-primary animate-pulse" />
+            <Recycle className="h-16 w-16 text-primary animate-bounce" />
           </div>
           <h1 className="mb-6 text-4xl md:text-6xl font-bold text-gray-900">
             Recicle Hoje para um{" "}
@@ -42,7 +42,7 @@ export const Hero = () => {
           </p>
           <Dialog open={open} onOpenChange={setOpen}>
             <DialogTrigger asChild>
-              <Button size="lg" className="group">
+              <Button size="lg" className="group bg-primary hover:bg-primary/90">
                 Agende sua Coleta Agora
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Button>
@@ -107,7 +107,6 @@ export const Hero = () => {
           </Dialog>
         </div>
       </div>
-      {/* Decorative background elements */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute -top-1/2 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
         <div className="absolute -bottom-1/2 left-0 w-96 h-96 bg-secondary/5 rounded-full blur-3xl" />
