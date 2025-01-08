@@ -3,9 +3,9 @@ import { Button } from "./ui/button";
 
 export const Footer = () => {
   return (
-    <footer className="bg-primary/5">
+    <footer className="bg-white border-t">
       <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-4">
             <h3 className="text-lg font-semibold flex items-center gap-2">
               <Leaf className="h-5 w-5 text-primary" />
@@ -14,15 +14,6 @@ export const Footer = () => {
             <p className="text-gray-600">
               Juntos, transformando pequenas ações em grandes mudanças para nosso planeta.
             </p>
-          </div>
-
-          <div className="space-y-4">
-            <h4 className="font-medium">Links Rápidos</h4>
-            <div className="space-y-2">
-              <p><a href="/servicos" className="text-gray-600 hover:text-primary">Serviços</a></p>
-              <p><a href="/educativo" className="text-gray-600 hover:text-primary">Sessão Educativa</a></p>
-              <p><a href="/sobre" className="text-gray-600 hover:text-primary">Sobre Nós</a></p>
-            </div>
           </div>
 
           <div className="space-y-4">
@@ -44,6 +35,15 @@ export const Footer = () => {
           </div>
 
           <div className="space-y-4">
+            <h4 className="font-medium">Links Rápidos</h4>
+            <div className="space-y-2">
+              <p><a href="/servicos" className="text-gray-600 hover:text-primary">Serviços</a></p>
+              <p><a href="/educativo" className="text-gray-600 hover:text-primary">Sessão Educativa</a></p>
+              <p><a href="/sobre" className="text-gray-600 hover:text-primary">Sobre Nós</a></p>
+            </div>
+          </div>
+
+          <div className="space-y-4 bg-primary/5 p-6 rounded-lg">
             <h4 className="font-medium text-lg">Newsletter</h4>
             <p className="text-gray-600">
               Receba dicas e novidades sobre reciclagem
@@ -61,7 +61,7 @@ export const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t text-center text-gray-600">
+        <div className="mt-8 pt-8 border-t text-center text-gray-600">
           <p className="flex items-center justify-center gap-1">
             Feito com <Heart className="h-4 w-4 text-red-500" /> para um futuro mais sustentável
           </p>

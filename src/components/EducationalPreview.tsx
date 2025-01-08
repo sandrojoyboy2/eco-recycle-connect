@@ -26,30 +26,32 @@ export const EducationalPreview = () => {
   ];
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-gradient-to-b from-white to-green-50/50">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
           Sessão <span className="text-primary">Educativa</span>
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
           {sections.map((section, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-100"
+              className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow duration-300"
             >
-              <div className="flex flex-col items-center text-center space-y-4">
-                <div className="p-4 bg-primary/10 rounded-full text-primary">
+              <div className="flex flex-col items-center text-center">
+                <div className="mb-4 p-3 bg-primary/10 rounded-full text-primary">
                   {section.icon}
                 </div>
-                <h3 className="text-xl font-semibold">{section.title}</h3>
-                <p className="text-gray-600">{section.description}</p>
+                <h3 className="text-lg font-semibold mb-2">{section.title}</h3>
+                <p className="text-gray-600 text-sm mb-4">{section.description}</p>
               </div>
             </div>
           ))}
         </div>
-        <div className="text-center mt-12">
-          <Button size="lg" className="px-8">
-            Ver toda a sessão educativa
+        <div className="text-center mt-8">
+          <Button asChild>
+            <a href="/educativo">
+              Ver toda a sessão educativa
+            </a>
           </Button>
         </div>
       </div>
