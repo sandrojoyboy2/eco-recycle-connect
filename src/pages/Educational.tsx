@@ -6,15 +6,19 @@ import { BlogSection } from "@/components/educational/BlogSection";
 import { VideoSection } from "@/components/educational/VideoSection";
 import { StatisticsSection } from "@/components/educational/StatisticsSection";
 import { QuizSection } from "@/components/educational/QuizSection";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 
 const Educational = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-green-50 to-white pt-20">
-      <div className="container mx-auto px-4 py-8">
-        <h1 className="text-4xl font-bold text-center mb-8">
-          Sessão Educativa
-        </h1>
-        
+    <div className="min-h-screen flex flex-col">
+      <Header />
+      <main className="flex-1 bg-gradient-to-b from-green-50 to-white pt-20">
+        <div className="container mx-auto px-4 py-8">
+          <h1 className="text-4xl font-bold text-center mb-8">
+            Sessão Educativa
+          </h1>
+          
         <Tabs defaultValue="blog" className="w-full">
           <TabsList className="grid w-full grid-cols-2 lg:grid-cols-4">
             <TabsTrigger value="blog" className="flex items-center gap-2">
@@ -111,6 +115,9 @@ const Educational = () => {
           </Card>
         </div>
       </div>
+        </div>
+      </main>
+      <Footer />
     </div>
   );
 };

@@ -5,11 +5,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import {
-  ChartContainer,
-  ChartTooltip,
-  ChartTooltipContent,
-} from "@/components/ui/chart";
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Tooltip } from "recharts";
 
 export const StatisticsSection = () => {
@@ -31,22 +26,12 @@ export const StatisticsSection = () => {
         </CardHeader>
         <CardContent>
           <div className="h-[300px]">
-            <ChartContainer
-              config={{
-                bar: {
-                  theme: {
-                    light: "#34D399",
-                    dark: "#34D399",
-                  },
-                },
-              }}
-            >
-              <ResponsiveContainer width="100%" height="100%">
-                <BarChart data={data}>
-                  <XAxis dataKey="name" />
-                  <YAxis />
-                  <Bar dataKey="value" fill="var(--color-bar)" />
-                  <Tooltip content={({ active, payload, label }) => {
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart data={data}>
+                <XAxis dataKey="name" />
+                <YAxis />
+                <Tooltip
+                  content={({ active, payload, label }) => {
                     if (active && payload && payload.length) {
                       return (
                         <div className="bg-white p-2 border rounded shadow">
@@ -58,10 +43,11 @@ export const StatisticsSection = () => {
                       );
                     }
                     return null;
-                  }} />
-                </BarChart>
-              </ResponsiveContainer>
-            </ChartContainer>
+                  }}
+                />
+                <Bar dataKey="value" fill="#34D399" />
+              </BarChart>
+            </ResponsiveContainer>
           </div>
         </CardContent>
       </Card>
