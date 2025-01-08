@@ -12,24 +12,34 @@ export const QuizSection = () => {
 
   const questions = [
     {
-      question: "Quanto tempo leva para um celular se decompor no ambiente?",
+      question: "Qual é a melhor prática para preparar eletrônicos antes da reciclagem?",
       options: [
-        "100 anos",
-        "500 anos",
-        "1000 anos",
-        "Não se decompõe naturalmente",
+        "Descartar diretamente",
+        "Fazer backup e limpar dados pessoais",
+        "Remover apenas a bateria",
+        "Quebrar para ocupar menos espaço",
       ],
-      correct: "Não se decompõe naturalmente",
+      correct: "Fazer backup e limpar dados pessoais",
     },
     {
-      question: "Quais materiais podem ser reciclados em eletrônicos?",
+      question: "Como identificar se um eletrônico ainda pode ser reutilizado?",
       options: [
-        "Apenas plástico",
-        "Apenas metais",
-        "Plástico e metais",
-        "Plástico, metais e componentes eletrônicos",
+        "Pela idade do dispositivo",
+        "Pelo preço original",
+        "Avaliando funcionalidade e custo de reparo",
+        "Pela marca do produto",
       ],
-      correct: "Plástico, metais e componentes eletrônicos",
+      correct: "Avaliando funcionalidade e custo de reparo",
+    },
+    {
+      question: "Qual a melhor forma de armazenar eletrônicos antes da reciclagem?",
+      options: [
+        "Em local úmido",
+        "Exposto ao sol",
+        "Em local seco e protegido",
+        "Misturado com outros tipos de lixo",
+      ],
+      correct: "Em local seco e protegido",
     },
   ];
 
@@ -44,16 +54,16 @@ export const QuizSection = () => {
 
   if (showResult) {
     return (
-      <Card className="mt-6">
+      <Card className="mt-6 border-primary/20">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <Award className="h-5 w-5 text-primary" />
+            <Award className="h-6 w-6 text-primary" />
             Parabéns!
           </CardTitle>
         </CardHeader>
         <CardContent className="text-center">
           <p className="mb-4">
-            Você completou o quiz sobre reciclagem de eletrônicos!
+            Você completou o quiz sobre boas práticas de reciclagem!
           </p>
           <Button
             onClick={() => {
@@ -70,29 +80,30 @@ export const QuizSection = () => {
   }
 
   return (
-    <Card className="mt-6">
+    <Card className="mt-6 border-primary/20">
       <CardHeader>
-        <CardTitle>
-          Questão {currentQuestion + 1} de {questions.length}
+        <CardTitle className="flex items-center justify-between">
+          <span>Questão {currentQuestion + 1} de {questions.length}</span>
+          <span className="text-sm text-primary">Quiz de Boas Práticas</span>
         </CardTitle>
       </CardHeader>
       <CardContent>
-        <p className="mb-4">{questions[currentQuestion].question}</p>
+        <p className="mb-6 text-lg font-medium">{questions[currentQuestion].question}</p>
         <RadioGroup
           value={selectedAnswer}
           onValueChange={setSelectedAnswer}
           className="space-y-4"
         >
           {questions[currentQuestion].options.map((option, index) => (
-            <div key={index} className="flex items-center space-x-2">
+            <div key={index} className="flex items-center space-x-2 p-3 rounded-lg hover:bg-primary/5 transition-colors">
               <RadioGroupItem value={option} id={`option-${index}`} />
-              <Label htmlFor={`option-${index}`}>{option}</Label>
+              <Label htmlFor={`option-${index}`} className="flex-1 cursor-pointer">{option}</Label>
             </div>
           ))}
         </RadioGroup>
         <Button
           onClick={handleNext}
-          className="w-full mt-6"
+          className="w-full mt-8"
           disabled={!selectedAnswer}
         >
           {currentQuestion === questions.length - 1 ? "Finalizar" : "Próxima"}

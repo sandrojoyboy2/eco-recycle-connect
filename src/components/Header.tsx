@@ -21,56 +21,43 @@ export const Header = () => {
             Eco Connect
           </a>
 
-          <nav className="hidden md:flex items-center space-x-6">
+          <nav className="hidden md:flex items-center space-x-8 absolute left-1/2 transform -translate-x-1/2">
             {menuItems.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
-                className="text-gray-600 hover:text-primary transition-colors flex items-center gap-2"
+                className="text-gray-600 hover:text-primary transition-colors"
               >
                 {item.label}
-                {item.badge && (
-                  <Badge variant="secondary" className="animate-pulse">
-                    {item.badge}
-                  </Badge>
-                )}
               </a>
             ))}
           </nav>
 
-          <button
-            className="md:hidden p-2"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
+          <Button variant="ghost" size="icon" className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
             {isMenuOpen ? (
-              <X className="h-6 w-6 text-gray-600" />
+              <X className="h-5 w-5" />
             ) : (
-              <Menu className="h-6 w-6 text-gray-600" />
+              <Menu className="h-5 w-5" />
             )}
-          </button>
+          </Button>
         </div>
       </div>
 
       {isMenuOpen && (
         <div className="md:hidden bg-white border-t">
-          <div className="container mx-auto px-4 py-4">
-            <nav className="flex flex-col space-y-4">
+          <nav className="container mx-auto px-4 py-4">
+            <div className="flex flex-col space-y-4">
               {menuItems.map((item) => (
                 <a
                   key={item.label}
                   href={item.href}
-                  className="text-gray-600 hover:text-primary transition-colors flex items-center justify-between"
+                  className="text-gray-600 hover:text-primary transition-colors px-4 py-2 rounded-lg hover:bg-primary/5"
                 >
                   {item.label}
-                  {item.badge && (
-                    <Badge variant="secondary" className="animate-pulse">
-                      {item.badge}
-                    </Badge>
-                  )}
                 </a>
               ))}
-            </nav>
-          </div>
+            </div>
+          </nav>
         </div>
       )}
     </header>
